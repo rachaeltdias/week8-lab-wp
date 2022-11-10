@@ -12,7 +12,7 @@ const server = http.createServer((request, response) => {
     }
 
     if (request.url === '/site') {
-        fs.readFile('index2.html', function(err, data) {
+        fs.readFile('index.html', function(err, data) {
             response.writeHead(200, {'Content-Type': 'text/html'});
             response.write(data);
             return response.end();
@@ -21,13 +21,6 @@ const server = http.createServer((request, response) => {
 if (request.url === '/image.jpg') {
         fs.readFile('image.jpg', function(err, data) {
             response.writeHead(200, {'Content-Type': 'image/jpeg'});
-            response.write(data);
-            return response.end();
-        });
-    }
-if (request.url === '/ajax.js') {
-        fs.readFile('ajax.js', function(err, data) {
-            response.writeHead(200, {'Content-Type': 'text/javascript'});
             response.write(data);
             return response.end();
         });
